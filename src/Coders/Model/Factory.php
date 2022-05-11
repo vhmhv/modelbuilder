@@ -360,7 +360,7 @@ class Factory
 
         if ($model->hasRelations()) {
             // Add separation between model properties and model relations
-            $annotations .= "\n * ";
+            $annotations .= "\n *";
         }
 
         foreach ($model->getRelations() as $name => $relation) {
@@ -368,7 +368,7 @@ class Factory
             if ($model->hasProperty($name)) {
                 continue;
             }
-            $annotations .= $this->class->annotation('property', $relation->hint()." \$$name");
+            $annotations .= " " . $this->class->annotation('property', $relation->hint()." \$$name");
         }
 
         return $annotations;

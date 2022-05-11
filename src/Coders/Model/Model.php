@@ -1219,7 +1219,7 @@ class Model
      */
     public function indentWithSpace()
     {
-        return (int) $this->config('indent_with_space', 0);
+        return (int) $this->config('indent_with_space', 4);
     }
 
     /**
