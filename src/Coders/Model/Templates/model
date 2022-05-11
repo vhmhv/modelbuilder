@@ -14,7 +14,8 @@ namespace {{namespace}};
  *
  * @package {{namespace}}
  */
-class {{class}} extends {{parent}}
+
+{{class}} extends {{parent}}
 {
 {{body}}
 }
