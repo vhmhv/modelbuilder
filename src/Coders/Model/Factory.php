@@ -368,7 +368,8 @@ class Factory
             if ($model->hasProperty($name)) {
                 continue;
             }
-            $annotations .= " " . $this->class->annotation('property', $relation->hint()." \$$name");
+            $annotationName = $this->class->annotation('property', $relation->hint()." \$$name");
+            $annotations .= ($annotationName !== "" ? " " . $annotationName : "");
         }
 
         return $annotations;
