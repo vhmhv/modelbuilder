@@ -3,10 +3,15 @@
 namespace {{namespace}};
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+//use App\Traits\Filterable;
 {{imports}}
 
 class {{class}} extends {{parent}}
 {
     use HasFactory;
+    //use Filterable;
+
+    //protected $likeFilterFields = [''];
+
 {{body}}
 }

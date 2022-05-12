@@ -368,8 +368,7 @@ class Factory
             if ($model->hasProperty($name)) {
                 continue;
             }
-            $annotationName = $this->class->annotation('property', $relation->hint()." \$$name");
-            $annotations .= ($annotationName !== "" ? " " . $annotationName : "");
+            $annotations .= " " . $this->class->annotation('property', $relation->hint() . " \$$name");
         }
 
         return $annotations;
@@ -549,10 +548,6 @@ class Factory
         $template = str_replace('{{imports}}', $this->formatBaseClasses($model), $template);
         $template = str_replace('{{parent}}', $this->getBaseClassName($model), $template);
         $template = str_replace('{{body}}', $this->userFileBody($model), $template);
-
-        if ($model->indentWithSpace()) {
-            $template = str_replace("\t", str_repeat(' ', $model->indentWithSpace()), $template);
-        }
 
         $this->files->put($file, $template);
     }
