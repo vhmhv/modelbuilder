@@ -2,9 +2,11 @@
 
 namespace {{namespace}};
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 {{imports}}
 
 class {{class}} extends {{parent}}
 {
+    use HasFactory;
 {{body}}
 }
