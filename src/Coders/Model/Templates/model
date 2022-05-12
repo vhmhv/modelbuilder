@@ -10,7 +10,7 @@ namespace {{namespace}};
 
 /**
  * Class {{class}}
-{{properties}}
+ *{{properties}}
  *
  * @package {{namespace}}
  */
