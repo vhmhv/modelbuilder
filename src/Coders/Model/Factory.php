@@ -443,16 +443,16 @@ class Factory
             $body .= $this->class->field('timestamps', false, ['visibility' => 'public']);
         }
 
-        if ($model->needsTableName()) {
-            $body .= $this->class->field('table', $model->getTableForQuery());
-        }
-
         if ($model->hasCustomDateFormat()) {
             $body .= $this->class->field('dateFormat', $model->getDateFormat());
         }
 
         if ($model->doesNotUseSnakeAttributes()) {
             $body .= $this->class->field('snakeAttributes', false, ['visibility' => 'public static']);
+        }
+
+        if ($model->needsTableName()) {
+            $body .= $this->class->field('table', $model->getTableForQuery());
         }
 
         if ($model->hasCasts()) {
