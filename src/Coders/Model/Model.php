@@ -349,7 +349,6 @@ echo $column->type."=";
     public function phpTypeHint($castType, $nullable)
     {
         $type = $castType;
-echp
         switch ($castType) {
             case 'object':
                 $type = '\stdClass';
