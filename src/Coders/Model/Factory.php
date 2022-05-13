@@ -427,10 +427,6 @@ class Factory
         }
 
         // When table is not plural, append the table name
-        if ($model->needsTableName()) {
-            $body .= $this->class->field('table', $model->getTableForQuery());
-        }
-
         if ($model->hasCustomPrimaryKey()) {
             $body .= $this->class->field('primaryKey', $model->getPrimaryKey());
         }
@@ -445,6 +441,10 @@ class Factory
 
         if (! $model->usesTimestamps()) {
             $body .= $this->class->field('timestamps', false, ['visibility' => 'public']);
+        }
+
+        if ($model->needsTableName()) {
+            $body .= $this->class->field('table', $model->getTableForQuery());
         }
 
         if ($model->hasCustomDateFormat()) {
