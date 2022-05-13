@@ -170,6 +170,8 @@ class Factory
             $file = str_replace("\t", str_repeat(' ', $model->indentWithSpace()), $file);
         }
 
+        $file = str_replace(" \n", "\n", $file);
+
         $this->files->put($this->modelPath($model, $model->usesBaseFiles() ? ['Base'] : []), $file);
 
         if ($this->needsUserFile($model)) {
@@ -552,6 +554,8 @@ class Factory
         if ($model->indentWithSpace()) {
             $template = str_replace("\t", str_repeat(' ', $model->indentWithSpace()), $template);
         }
+
+        $template = str_replace(" \n", "\n", $template);
 
         $this->files->put($file, $template);
     }
