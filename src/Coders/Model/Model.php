@@ -258,7 +258,7 @@ class Model
     {
         // TODO: Check type cast is OK
         $cast = $column->type;
-
+echo $column->type."=";
         $propertyName = $this->usesPropertyConstants() ? 'self::'.strtoupper($column->name) : $column->name;
 
         // Due to some casting problems when converting null to a Carbon instance,
@@ -349,7 +349,7 @@ class Model
     public function phpTypeHint($castType, $nullable)
     {
         $type = $castType;
-
+echp
         switch ($castType) {
             case 'object':
                 $type = '\stdClass';

@@ -100,6 +100,7 @@ class Schema implements \Reliese\Meta\Schema
             'AND table_name='.$this->wrap($blueprint->table())
         ));
         foreach ($rows as $column) {
+            print_r($column);
             $blueprint->withColumn(
                 $this->parseColumn($column)
             );
